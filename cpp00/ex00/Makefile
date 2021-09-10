@@ -6,7 +6,7 @@
 #    By: ede-thom <ede-thom@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 17:26:10 by ede-thom          #+#    #+#              #
-#    Updated: 2021/09/08 16:53:23 by ede-thom         ###   ########.fr        #
+#    Updated: 2021/09/08 17:24:55 by ede-thom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INC_DIR		=	philo
 LIB			=	-pthread
 # **************************************************************************** #
 
-OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+OBJS		=	$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 OBJS_NODIR	=	$(patsubst %.o, $(OBJ_DIR)/%.o, $(notdir $(OBJS)))
 
 # COLORS

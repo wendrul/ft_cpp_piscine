@@ -31,4 +31,9 @@
 *.out
 *.app
 
+.vscode
+
 megaphone
+crappy
+
+
