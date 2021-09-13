@@ -22,14 +22,13 @@ MKDIR_P		=	mkdir -p
 RM			=	rm -f
 
 # Directories
-SRC_DIR		=	philo
 OBJ_DIR		=	obj
-INC_DIR		=	philo
 LIB			=	-pthread
 # **************************************************************************** #
 
-OBJS		=	$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
+OBJS		=	$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 OBJS_NODIR	=	$(patsubst %.o, $(OBJ_DIR)/%.o, $(notdir $(OBJS)))
+
 
 # COLORS
 RED			=	\033[0;31m
@@ -46,7 +45,8 @@ CC			=	clang++
 
 all:			${NAME}
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.cpp $(INC_DIR)/
+
+$(OBJ_DIR)/%.o:	%.cpp
 				@$(MKDIR_P) $(OBJ_DIR)
 				@$(CC) $(CFLAGS) -c -o $(OBJ_DIR)/$(notdir $@) $< $(INC)
 				@printf "$(CYAN)Compiling $(MAGENTA)$<$(RESET)\r"
