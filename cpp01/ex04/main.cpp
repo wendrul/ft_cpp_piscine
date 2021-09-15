@@ -13,11 +13,11 @@ void sed(std::string fileName, std::string needle, std::string newNeedle)
     std::ostringstream text;
     text << file.rdbuf();
     std::string s = text.str();
-    size_t index;
+    size_t index = newNeedle.length() * -1;
     
     while (1)
     {
-        index = s.find(needle);
+        index = s.find(needle, index + newNeedle.length());
         if (index == std::string::npos)
             break;
         s.erase(index, needle.length());
