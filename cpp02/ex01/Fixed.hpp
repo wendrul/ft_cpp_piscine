@@ -21,7 +21,6 @@ public:
     int getRawBits() const;
     void setRawBits(int const raw);
     Fixed &operator=(const Fixed &other);
-    std::ostream& operator<<(std::ostream &out);
     int toInt(void) const;
     float toFloat(void) const;
     float pow(int n, int p);
