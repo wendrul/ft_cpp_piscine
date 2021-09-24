@@ -39,7 +39,7 @@ MAGENTA		=	\033[0;35m
 CYAN		=	\033[0;36m
 RESET		=	\033[0m
 # **************************************************************************** #
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 CC			=	clang++
 

@@ -17,34 +17,38 @@ void PhoneBook::AddContact()
     std::string temp;
 
     std::cout << "\nContact first name?\n";
-    std::cin >> temp;
-    newContact.firstName = temp;
+    std::getline(std::cin, temp);
+    newContact.setFirstName(temp);
 
     std::cout << "\nContact last name?\n";
-    std::cin >> temp;
-    newContact.lastName = temp;
+    std::getline(std::cin, temp);
+    newContact.setLastName(temp);
 
     std::cout << "\nContact nickname?\n";
-    std::cin >> temp;
-    newContact.nickname = temp;
+    std::getline(std::cin, temp);
+    newContact.setNickname(temp);
 
     std::cout << "\nContact phone number?\n";
-    std::cin >> temp;
-    newContact.phoneNumber = temp;
-    
+    std::getline(std::cin, temp);
+    newContact.setPhoneNumber(temp);
+
     std::cout << "\nContact darkest secret?\n";
-    std::cin >> temp;
-    newContact.darkestSecret = temp;
+    std::getline(std::cin, temp);
+    newContact.setDarkestSecret(temp);
 
     std::cout << "\nContact Succesfully Added\n";
-
-    if (size < MAX_CONTACTS)
+    
+    if (size >= MAX_CONTACTS)
     {
-        contacts[size] = newContact;
-        size++;
+        for (int i = 0; i < MAX_CONTACTS - 1; i++)
+        {
+            contacts[i] = contacts[i + 1];
+        }
+        size--;
     }
-    else
-        contacts[size - 1] = newContact;
+    contacts[size] = newContact;
+    size++;
+
 }
 
 void PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret)
@@ -58,6 +62,11 @@ void PhoneBook::Search()
 {
     int select;
 
+    if (size <= 0)
+    {
+        std::cout << "Empty and crappy phonebook\n";
+        return;
+    }
     for (int i = 0; i < size; i++)
     {
         contacts[i].DisplayListElement(i);
@@ -69,6 +78,8 @@ void PhoneBook::Search()
         {
             std::cout << std::endl;
             contacts[select].DisplayAllInfo();
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
         else

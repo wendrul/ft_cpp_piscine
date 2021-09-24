@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 #include "PhoneBook.hpp"
 
 
@@ -11,7 +12,7 @@ int main()
         std::string cmd;
         
         std::cout << "$> ";
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
         if (cmd == "ADD")
         {
             phoneBook.AddContact();
