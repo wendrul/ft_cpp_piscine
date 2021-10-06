@@ -7,13 +7,12 @@
 #include <iomanip>
 #include <string>
 
-#define MAX_CONTACTS 8
-
 class PhoneBook
 {
 private:
     int size;
-    Contact contacts[MAX_CONTACTS];
+    const static int maxContacts = 8;
+    Contact contacts[maxContacts];
 
 public:
     PhoneBook();

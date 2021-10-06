@@ -2,12 +2,11 @@
 
 Zombie* zombieHorde( int N, std::string name );
 
-#define AMOUNT 21
-
 int main()
 {
-    Zombie* horde = zombieHorde(AMOUNT, "sheepZombie");
-    for (int i = 0; i < AMOUNT; i++)
+    const int amount = 21;
+    Zombie* horde = zombieHorde(amount, "sheepZombie");
+    for (int i = 0; i < amount; i++)
     {
         horde[i].announce();
     }

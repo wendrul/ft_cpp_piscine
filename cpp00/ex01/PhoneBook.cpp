@@ -38,9 +38,9 @@ void PhoneBook::AddContact()
 
     std::cout << "\nContact Succesfully Added\n";
     
-    if (size >= MAX_CONTACTS)
+    if (size >= maxContacts)
     {
-        for (int i = 0; i < MAX_CONTACTS - 1; i++)
+        for (int i = 0; i < maxContacts - 1; i++)
         {
             contacts[i] = contacts[i + 1];
         }
@@ -54,7 +54,7 @@ void PhoneBook::AddContact()
 void PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret)
 {
     contacts[size] = Contact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-    if (size < MAX_CONTACTS)
+    if (size < maxContacts)
         size++;
 }
 
