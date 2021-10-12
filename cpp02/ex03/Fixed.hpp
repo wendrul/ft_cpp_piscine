@@ -20,7 +20,7 @@ public:
     ~Fixed();
     int getRawBits() const;
     void setRawBits(int const raw);
-    Fixed const &operator=(const Fixed &other);
+    Fixed &operator=(const Fixed &other);
 
     Fixed operator+(const Fixed &other) const;
     Fixed operator-(const Fixed &other) const;

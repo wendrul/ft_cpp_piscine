@@ -18,9 +18,8 @@ Point::~Point()
 
 Point &Point::operator=(const Point &other) 
 {
-    if (this->x == other.getX() && this->y == other.getY())
-        return *this;
-    *this = Point(other.x, other.y);
+    this->x = other.x;
+    this->y = other.y;
     return *this;
 }
 

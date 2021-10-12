@@ -36,7 +36,7 @@ std::ostream &operator<<(std::ostream &out, const Fixed &decimal)
     return out;
 }
 
-Fixed const &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed &other)
 {
     this->value = other.getRawBits();
     return *this;
