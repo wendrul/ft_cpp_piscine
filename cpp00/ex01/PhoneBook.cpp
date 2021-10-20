@@ -11,33 +11,44 @@ PhoneBook::~PhoneBook()
 {
 }
 
+std::string PhoneBook::GetContactField()
+{
+    std::string tmp;
+
+    while (std::getline(std::cin, tmp))
+    {
+        if (tmp.length() == 0)
+        {
+            std::cout << "Invalid empty field, try again.\n";
+            continue;
+        }
+        return (tmp);
+    }
+    exit(0);
+}
+
 void PhoneBook::AddContact()
 {
     Contact newContact = Contact();
     std::string temp;
 
     std::cout << "\nContact first name?\n";
-    std::getline(std::cin, temp);
-    newContact.setFirstName(temp);
+    newContact.setFirstName(GetContactField());
 
     std::cout << "\nContact last name?\n";
-    std::getline(std::cin, temp);
-    newContact.setLastName(temp);
+    newContact.setLastName(GetContactField());
 
     std::cout << "\nContact nickname?\n";
-    std::getline(std::cin, temp);
-    newContact.setNickname(temp);
+    newContact.setNickname(GetContactField());
 
     std::cout << "\nContact phone number?\n";
-    std::getline(std::cin, temp);
-    newContact.setPhoneNumber(temp);
+    newContact.setPhoneNumber(GetContactField());
 
     std::cout << "\nContact darkest secret?\n";
-    std::getline(std::cin, temp);
-    newContact.setDarkestSecret(temp);
+    newContact.setDarkestSecret(GetContactField());
 
     std::cout << "\nContact Succesfully Added\n";
-    
+
     if (size >= maxContacts)
     {
         for (int i = 0; i < maxContacts - 1; i++)
@@ -48,7 +59,6 @@ void PhoneBook::AddContact()
     }
     contacts[size] = newContact;
     size++;
-
 }
 
 void PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret)
@@ -71,22 +81,18 @@ void PhoneBook::Search()
     {
         contacts[i].DisplayListElement(i);
     }
-    while (1)
+    std::cout << "\nSelect a contact by entering its index\n";
+    if (std::cin >> select && select >= 0 && select < size)
     {
-        std::cout << "\nSelect a contact by entering its index\n";
-        if (std::cin >> select && select >= 0 && select < size)
-        {
-            std::cout << std::endl;
-            contacts[select].DisplayAllInfo();
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            break;
-        }
-        else
-        {
-            std::cout << "Invalid index please select a valid index between 0 - " << size - 1 << std::endl;
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
+        std::cout << std::endl;
+        contacts[select].DisplayAllInfo();
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+    else
+    {
+        std::cout << "Invalid index please select a valid index between 0 - " << size - 1 << std::endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }

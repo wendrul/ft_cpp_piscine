@@ -13,6 +13,7 @@ private:
     int size;
     const static int maxContacts = 8;
     Contact contacts[maxContacts];
+    std::string GetContactField();
 
 public:
     PhoneBook();

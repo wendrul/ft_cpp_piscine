@@ -3,16 +3,13 @@
 #include <string>
 #include "PhoneBook.hpp"
 
-
 int main()
 {
+    std::string cmd;
     PhoneBook phoneBook = PhoneBook();
-    while (1)
+    std::cout << "$> ";
+    while (std::getline(std::cin, cmd))
     {
-        std::string cmd;
-        
-        std::cout << "$> ";
-        std::getline(std::cin, cmd);
         if (cmd == "ADD")
         {
             phoneBook.AddContact();
@@ -25,6 +22,8 @@ int main()
         {
             return 0;
         }
+        std::cout << "$> ";
     }
+    std::cout << std::endl;
     return 0;
 }
