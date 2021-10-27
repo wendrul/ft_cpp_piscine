@@ -1,20 +1,21 @@
 #include "ClapTrap.hpp"
 
-const std::string ClapTrap::defaultName = "clappy"; 
+const std::string ClapTrap::defaultName = "clappy";
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : name(name),
+                                       hitPoints(defaultHitPoints),
+                                       energyPoints(defaultEnergyPoints),
+                                       attackDamage(defaultAttackDamage)
 {
-    this->name = name;
-    hitPoints = defaultHitPoints;
-    energyPoints = defaultEnergyPoints;
-    attackDamage = defaultAttackDamage;
+    std::cout << "Constructing " << name << " ClapTrap";
 }
-ClapTrap::ClapTrap()
+
+ClapTrap::ClapTrap() : name(defaultName),
+                       hitPoints(defaultHitPoints),
+                       energyPoints(defaultEnergyPoints),
+                       attackDamage(defaultAttackDamage)
 {
-    this->name = defaultName;
-    hitPoints = defaultHitPoints;
-    energyPoints = defaultEnergyPoints;
-    attackDamage = defaultAttackDamage;
+    std::cout << "Constructing ClapTrap by default\n";
 }
 ClapTrap::ClapTrap(const ClapTrap &that)
 {
@@ -26,6 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &that)
 
 ClapTrap::~ClapTrap()
 {
+    std::cout << "Destructing ClapTrap " << name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &that)

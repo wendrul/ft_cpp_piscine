@@ -8,11 +8,11 @@
 class ClapTrap
 {
 private:
-    std::string name;
     const static int defaultHitPoints = 10;
     const static int defaultEnergyPoints = 10;
     const static int defaultAttackDamage = 0;
     const static std::string defaultName;
+    std::string name;
     int hitPoints;
     int energyPoints;
     int attackDamage;
