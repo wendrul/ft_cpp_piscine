@@ -4,6 +4,7 @@ const std::string ClapTrap::defaultName = "clappy";
 
 ClapTrap::ClapTrap(std::string name)
 {
+    std::cout << "Constructing " << name << " claptrap";
     this->name = name;
     hitPoints = defaultHitPoints;
     energyPoints = defaultEnergyPoints;
@@ -11,6 +12,7 @@ ClapTrap::ClapTrap(std::string name)
 }
 ClapTrap::ClapTrap()
 {
+    std::cout << "Constructing claptrap by default\n";
     this->name = defaultName;
     hitPoints = defaultHitPoints;
     energyPoints = defaultEnergyPoints;
@@ -26,6 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap &that)
 
 ClapTrap::~ClapTrap()
 {
+    std::cout << "Constructing claptrap " << name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &that)
