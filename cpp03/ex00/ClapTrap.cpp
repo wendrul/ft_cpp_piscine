@@ -7,7 +7,7 @@ ClapTrap::ClapTrap(std::string name) : name(name),
                                        energyPoints(defaultEnergyPoints),
                                        attackDamage(defaultAttackDamage)
 {
-    std::cout << "Constructing " << name << " ClapTrap";
+    std::cout << "Constructing " << name << " ClapTrap\n";
 }
 
 ClapTrap::ClapTrap() : name(defaultName),
@@ -17,12 +17,12 @@ ClapTrap::ClapTrap() : name(defaultName),
 {
     std::cout << "Constructing ClapTrap by default\n";
 }
-ClapTrap::ClapTrap(const ClapTrap &that)
+ClapTrap::ClapTrap(const ClapTrap &that) : name(that.name),
+                                           hitPoints(that.hitPoints),
+                                           energyPoints(that.energyPoints),
+                                           attackDamage(that.attackDamage)
 {
-    this->name = that.name;
-    this->hitPoints = that.hitPoints;
-    this->energyPoints = that.energyPoints;
-    this->attackDamage = that.attackDamage;
+    std::cout << "Constructing ClapTrap " << name << " by copy\n";
 }
 
 ClapTrap::~ClapTrap()

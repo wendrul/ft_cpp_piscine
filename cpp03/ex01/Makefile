@@ -6,14 +6,15 @@
 #    By: ede-thom <ede-thom@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 17:26:10 by ede-thom          #+#    #+#              #
-#    Updated: 2021/10/06 15:13:27 by ede-thom         ###   ########.fr        #
+#    Updated: 2021/10/27 14:01:20 by ede-thom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		=	main.cpp\
-				ClapTrap.cpp
+				ClapTrap.cpp\
+				ScavTrap.cpp
 
-NAME		=	clapTrap
+NAME		=	scavTrap
 
 # **************************************************************************** #
 

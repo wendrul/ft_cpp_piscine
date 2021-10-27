@@ -1,34 +1,42 @@
 #include "ClapTrap.hpp"
 
-const std::string ClapTrap::defaultName = "clappy"; 
+const std::string ClapTrap::defaultName = "clappy";
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : name(name),
+                                       hitPoints(defaultHitPoints),
+                                       energyPoints(defaultEnergyPoints),
+                                       attackDamage(defaultAttackDamage)
 {
-    std::cout << "Constructing " << name << " claptrap";
-    this->name = name;
-    hitPoints = defaultHitPoints;
-    energyPoints = defaultEnergyPoints;
-    attackDamage = defaultAttackDamage;
+    std::cout << "Constructing ClapTrap " << name << std::endl;
 }
-ClapTrap::ClapTrap()
+
+ClapTrap::ClapTrap(std::string name, int hitPoints,
+                   int energyPoints, int attackDamage) : name(name),
+                                                         hitPoints(hitPoints),
+                                                         energyPoints(energyPoints),
+                                                         attackDamage(attackDamage)
 {
-    std::cout << "Constructing claptrap by default\n";
-    this->name = defaultName;
-    hitPoints = defaultHitPoints;
-    energyPoints = defaultEnergyPoints;
-    attackDamage = defaultAttackDamage;
+    std::cout << "Constructing ClapTrap " << name << std::endl;
 }
-ClapTrap::ClapTrap(const ClapTrap &that)
+
+ClapTrap::ClapTrap() : name(defaultName),
+                       hitPoints(defaultHitPoints),
+                       energyPoints(defaultEnergyPoints),
+                       attackDamage(defaultAttackDamage)
 {
-    this->name = that.name;
-    this->hitPoints = that.hitPoints;
-    this->energyPoints = that.energyPoints;
-    this->attackDamage = that.attackDamage;
+    std::cout << "Constructing ClapTrap by default: " << name << std::endl;
+}
+ClapTrap::ClapTrap(const ClapTrap &that) : name(that.name),
+                                           hitPoints(that.hitPoints),
+                                           energyPoints(that.energyPoints),
+                                           attackDamage(that.attackDamage)
+{
+    std::cout << "Constructing ClapTrap " << name << " by copy\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Constructing claptrap " << name << std::endl;
+    std::cout << "Destructing ClapTrap " << name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &that)
@@ -40,7 +48,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &that)
     return *this;
 }
 
-void ClapTrap::attack(std::string const &target)
+void ClapTrap::attack(std::string const &target) const
 {
     std::cout << "ClapTrap " << name << " attacks " << target << " causing " << attackDamage << " damage!" << std::endl;
 }
