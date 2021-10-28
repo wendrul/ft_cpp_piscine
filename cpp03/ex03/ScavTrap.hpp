@@ -3,7 +3,7 @@
 #define SCAV_TRAP_H
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
     const static int defaultHitPoints = 100;

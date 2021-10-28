@@ -6,7 +6,7 @@
 #    By: ede-thom <ede-thom@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 17:26:10 by ede-thom          #+#    #+#              #
-#    Updated: 2021/10/27 17:54:14 by ede-thom         ###   ########.fr        #
+#    Updated: 2021/10/28 14:21:13 by ede-thom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,8 @@ all:			${NAME}
 $(OBJ_DIR)/%.o:	%.cpp
 				@$(MKDIR_P) $(OBJ_DIR)
 				@$(CC) $(CFLAGS) -c -o $(OBJ_DIR)/$(notdir $@) $< $(INC)
-				@printf "$(CYAN)Compiling $(MAGENTA)$<$(RESET)\r"
 				@printf "\r                                                  \r"
+				@printf "$(CYAN)Compiling $(MAGENTA)$<$(RESET)\r"
 
 $(NAME):		$(OBJS)
 				@printf "$(CYAN)Done creating $(NAME) object files!\n$(RESET)"

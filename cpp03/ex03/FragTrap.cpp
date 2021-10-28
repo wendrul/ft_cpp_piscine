@@ -4,11 +4,17 @@ const std::string FragTrap::defaultName = "fragger";
 
 FragTrap::FragTrap() : ClapTrap(defaultName, defaultHitPoints, defaultEnergyPoints, defaultAttackDamage)
 {
+    this->hitPoints = defaultHitPoints;
+    this->energyPoints = defaultEnergyPoints;
+    this->attackDamage = defaultAttackDamage;
     std::cout << "Constructing default FragTrap: " << name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, defaultHitPoints, defaultEnergyPoints, defaultAttackDamage)
 {
+    this->hitPoints = defaultHitPoints;
+    this->energyPoints = defaultEnergyPoints;
+    this->attackDamage = defaultAttackDamage;
     std::cout << "Constructing FragTrap " << name << std::endl;
 }
 

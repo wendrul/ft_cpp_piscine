@@ -3,7 +3,7 @@
 #define FRAG_TRAP_H
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 private:
     const static int defaultHitPoints = 100;

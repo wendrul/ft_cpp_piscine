@@ -9,18 +9,22 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
-    /* data */
+    const static std::string defaultName;
+    std::string name;
 public:
-    DiamondTrap(/* args */);
+    DiamondTrap();
+    DiamondTrap(std::string name);
+    DiamondTrap(DiamondTrap const &src);
     ~DiamondTrap();
+
+    DiamondTrap &operator=(const DiamondTrap &other);
+    
+    using FragTrap::hitPoints;
+    using ScavTrap::energyPoints;
+    using FragTrap::attackDamage;
+    using ScavTrap::attack;
+    void attack(std::string const &target) const;
+    void whoAmI() const;
 };
-
-DiamondTrap::DiamondTrap(/* args */)
-{
-}
-
-DiamondTrap::~DiamondTrap()
-{
-}
 
 #endif

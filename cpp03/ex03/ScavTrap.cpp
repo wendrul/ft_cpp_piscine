@@ -4,11 +4,17 @@ const std::string ScavTrap::defaultName = "scavy";
 
 ScavTrap::ScavTrap() : ClapTrap(defaultName, defaultHitPoints, defaultEnergyPoints, defaultAttackDamage)
 {
+    this->hitPoints = defaultHitPoints;
+    this->energyPoints = defaultEnergyPoints;
+    this->attackDamage = defaultAttackDamage;
     std::cout << "Constructing default ScavTrap: " << name << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, defaultHitPoints, defaultEnergyPoints, defaultAttackDamage)
 {
+    this->hitPoints = defaultHitPoints;
+    this->energyPoints = defaultEnergyPoints;
+    this->attackDamage = defaultAttackDamage;
     std::cout << "Constructing ScavTrap " << name << std::endl;
 }
 
