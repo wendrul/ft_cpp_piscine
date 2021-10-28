@@ -16,9 +16,11 @@ Cat::Cat(const Cat &that) : Animal(that)
     std::cout << type << " has been copy constructed\n";
 }
 
-Cat &Cat::operator=(const Cat &)
+Cat &Cat::operator=(const Cat &other)
 {
+    Animal::operator=(other);
     std::cout << type << " assigned\n";
+    return *this;
 }
 
 void Cat::makeSound() const

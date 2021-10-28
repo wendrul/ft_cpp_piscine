@@ -6,7 +6,7 @@
 #    By: ede-thom <ede-thom@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/16 17:26:10 by ede-thom          #+#    #+#              #
-#    Updated: 2021/09/10 13:48:14 by ede-thom         ###   ########.fr        #
+#    Updated: 2021/10/28 15:22:24 by ede-thom         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ RM			=	rm -f
 
 # Directories
 OBJ_DIR		=	obj
-LIB			=	-pthread
+LIB			=	
 # **************************************************************************** #
 
 OBJS		=	$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
@@ -52,8 +52,8 @@ all:			${NAME}
 $(OBJ_DIR)/%.o:	%.cpp
 				@$(MKDIR_P) $(OBJ_DIR)
 				@$(CC) $(CFLAGS) -c -o $(OBJ_DIR)/$(notdir $@) $< $(INC)
-				@printf "$(CYAN)Compiling $(MAGENTA)$<$(RESET)\r"
 				@printf "\r                                                  \r"
+				@printf "$(CYAN)Compiling $(MAGENTA)$<$(RESET)\r"
 
 $(NAME):		$(OBJS)
 				@printf "$(CYAN)Done creating $(NAME) object files!\n$(RESET)"
