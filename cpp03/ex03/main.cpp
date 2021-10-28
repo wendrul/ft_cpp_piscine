@@ -21,6 +21,7 @@ int main()
     c->guardGate();
     c->attack("people");
     d->attack("you");
+    d->highFivesGuys();
 
     std::cout << "\n";
 

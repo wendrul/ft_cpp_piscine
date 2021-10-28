@@ -22,7 +22,6 @@ public:
     using FragTrap::hitPoints;
     using ScavTrap::energyPoints;
     using FragTrap::attackDamage;
-    using ScavTrap::attack;
     void attack(std::string const &target) const;
     void whoAmI() const;
 };
