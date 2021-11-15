@@ -9,17 +9,20 @@ int main()
 
     std::cout << "float a address: " << &a_f << std::endl;
     std::cout << "float b address: " << &b_f << std::endl;
-    std::cout << "min ret address: " << &min(a_f, b_f) << "\n\n";
+    std::cout << "min ret address: " << &::min(a_f, b_f) << "\n\n";
 
-    std::cout << "swapping vars\n";
-    swap(a_d, b_d);
     std::cout << "double a: " << a_d << std::endl;
     std::cout << "double b: " << b_d << std::endl;
-    std::cout << "max of doubles: " << max(a_d, b_d) << "\n\n";
+    std::cout << "swapping vars\n";
+    ::swap(a_d, b_d);
+    std::cout << "double a: " << a_d << std::endl;
+    std::cout << "double b: " << b_d << std::endl;
+    std::cout << "max of doubles: " << ::max(a_d, b_d) << "\n\n";
 
     std::cout << "explicit template\n";
-    std::cout << "max of ints: " << max<int>(a_i, b_i) << std::endl;
-    std::cout << "max of floats (implictly casted to ints): " << max<int>(a_f, b_f) << "\n\n\n";
+    std::cout << "max of ints: " << ::max<int>(a_i, b_i) << std::endl;
+    std::cout << "max of floats (implictly casted to ints): " << ::max<int>(a_f, b_f) << "\n\n\n";
+
 
     std::cout << "Subject test main\n\n";
     int a = 2;
