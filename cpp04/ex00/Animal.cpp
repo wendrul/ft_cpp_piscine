@@ -1,29 +1,33 @@
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : type("unknown")
 {
     std::cout << "Creating Animal\n";
-    this->type = "unknown";
 }
-Animal::Animal(const Animal &src)
+
+Animal::Animal(const Animal &src) : type(src.type)
 {
     std::cout << "Creating Animal\n";
-    this->type = src.type;
 }
+
 Animal::~Animal()
 {
     std::cout << "Creating Animal\n";
 }
+
+Animal &Animal::operator=(const Animal &src)
+{
+    type = src.type;
+    std::cout << "Animal assigned\n";
+    return *this;
+}
+
 void Animal::makeSound() const
 {
     std::cout << "*robot noises*\n";
 }
+
 std::string Animal::getType() const
 {
     return type;
-}
-Animal &Animal::operator=(const Animal &src)
-{
-    type = src.type;
-    return *this;
 }

@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
     type = "Cat";
     std::cout << type << " has been constructed\n";

@@ -73,3 +73,5 @@ fclean:			clean
 re:				clean all
 
 bonus:			$(NAME)
+
+.PHONY: all clean fclean re bonus

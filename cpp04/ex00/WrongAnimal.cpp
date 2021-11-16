@@ -1,29 +1,32 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal() : type("unknown")
 {
     std::cout << "Creating WrongAnimal\n";
-    this->type = "unknown";
 }
-WrongAnimal::WrongAnimal(const WrongAnimal &src)
+
+WrongAnimal::WrongAnimal(const WrongAnimal &src) : type(src.type)
 {
     std::cout << "Creating WrongAnimal\n";
-    this->type = src.type;
 }
+
 WrongAnimal::~WrongAnimal()
 {
     std::cout << "Creating WrongAnimal\n";
 }
-void WrongAnimal::makeSound() const
-{
-    std::cout << "*robot noises*\n";
-}
-std::string WrongAnimal::getType() const
-{
-    return type;
-}
+
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
     type = src.type;
     return *this;
+}
+
+void WrongAnimal::makeSound() const
+{
+    std::cout << "*robot noises*\n";
+}
+
+std::string WrongAnimal::getType() const
+{
+    return type;
 }
