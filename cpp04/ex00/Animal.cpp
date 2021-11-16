@@ -12,7 +12,7 @@ Animal::Animal(const Animal &src) : type(src.type)
 
 Animal::~Animal()
 {
-    std::cout << "Creating Animal\n";
+    std::cout << "Destructing Animal\n";
 }
 
 Animal &Animal::operator=(const Animal &src)

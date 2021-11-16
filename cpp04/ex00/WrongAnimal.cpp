@@ -12,7 +12,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &src) : type(src.type)
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Creating WrongAnimal\n";
+    std::cout << "Destructing WrongAnimal\n";
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
