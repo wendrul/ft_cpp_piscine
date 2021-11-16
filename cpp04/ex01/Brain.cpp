@@ -7,7 +7,8 @@ Brain::Brain()
 
 Brain::Brain(Brain const &that)
 {
-    std::cout << "Constructed Brain\n";
+    std::cout << "Constructed Brain by copy\n";
+    
     for (int i = 0; i < ideasSize; i++)
     {
         ideas[i] = that.ideas[i].c_str();

@@ -11,7 +11,7 @@ private:
 
 public:
     Cat();
-    ~Cat();
+    virtual ~Cat();
     Cat(const Cat &);
     Cat &operator=(const Cat &);
 

@@ -11,7 +11,7 @@ private:
 
 public:
     Dog();
-    ~Dog();
+    virtual ~Dog();
     Dog(const Dog &);
     Dog &operator=(const Dog &);
 

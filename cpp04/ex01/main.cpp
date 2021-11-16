@@ -20,7 +20,7 @@ void lol()
         else
             list[i] = new Cat();
     }
-
+    std::cout << "\n\n\n\n\n" << "Destruction of animals:" << "\n\n\n\n\n\n";
     for (size_t i = 0; i < 100; i++)
     {
         delete list[i];
@@ -30,6 +30,7 @@ void lol()
 int main()
 {
     lol();
-    while (1)
-        ;
+    // while (1)
+    //     ;
+    return 0;
 }
