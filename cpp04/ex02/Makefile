@@ -13,6 +13,8 @@
 SRCS		=	main.cpp\
 				Animal.cpp\
 				Cat.cpp\
+				Dog.cpp\
+				Brain.cpp
 
 NAME		=	zoo
 
@@ -70,3 +72,5 @@ fclean:			clean
 re:				clean all
 
 bonus:			$(NAME)
+
+.PHONY: all clean fclean re bonus

@@ -1,27 +1,27 @@
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat()
+Dog::Dog()
 : Animal()
 {
-    type = "Cat";
+    type = "Dog";
     brain = new Brain();
     std::cout << type << " has been constructed\n";
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
     delete brain;
     std::cout << type << " has been destructed\n";
 }
 
-Cat::Cat(const Cat& c)
+Dog::Dog(const Dog& c)
 : Animal(c)
 {
     brain = new Brain(*(c.brain));
     std::cout << type << " has been copy constructed\n";
 }
 
-Cat& Cat::operator=(const Cat& c)
+Dog& Dog::operator=(const Dog& c)
 {
     delete brain;
     brain = new Brain(*(c.brain));
@@ -30,7 +30,7 @@ Cat& Cat::operator=(const Cat& c)
     return *this;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-    std::cout << "nyan\n";
+    std::cout << "woof\n";
 }
