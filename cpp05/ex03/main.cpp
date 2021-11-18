@@ -7,19 +7,20 @@
 
 int main()
 {
-    Bureaucrat boss = Bureaucrat("Bossman", 1);
+    srand(time(0));
+    Bureaucrat boss = Bureaucrat("Boss", 1);
     Intern i = Intern();
 
     Form* test = i.makeForm("test", "abc");
     Form* shrubMaker = i.makeForm("shrubbery creation", "backyard");
-    Form* robotMe = i.makeForm("robotomy request", "Goody");
-    Form* snowdenPardon = i.makeForm("presidential pardon", "Edward Snowden");
+    Form* robotDio = i.makeForm("robotomy request", "Dio");
+    Form* shigechiPardon = i.makeForm("presidential pardon", "Shigechi");
 
-    boss.signForm(*robotMe);
-    boss.executeForm(*robotMe);
+    boss.signForm(*robotDio);
+    boss.executeForm(*robotDio);
 
     delete test;
     delete shrubMaker;
-    delete robotMe;
-    delete snowdenPardon;
+    delete robotDio;
+    delete shigechiPardon;
 }

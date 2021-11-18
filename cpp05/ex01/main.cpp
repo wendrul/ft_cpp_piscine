@@ -47,11 +47,11 @@ int main()
         std::cerr << e.what() << '\n';
     }
     
-    Form f = Form("Oil rig in the middle east", 20, 10);
-    Bureaucrat b = Bureaucrat("President Donaldo El Trumpadoro", 5);
-    Bureaucrat idiot = Bureaucrat("hobo man", 140);
+    Form f = Form("Bidets for all people", 20, 10);
+    Bureaucrat president = Bureaucrat("Vladimir Putin", 5);
+    Bureaucrat dog = Bureaucrat("Firu", 140);
 
-    idiot.signForm(f);
-    b.signForm(f);
-    b.signForm(f);
+    dog.signForm(f);
+    president.signForm(f);
+    president.signForm(f);
 }

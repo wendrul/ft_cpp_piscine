@@ -2,30 +2,30 @@
 
 int main()
 {
-    Bureaucrat jim = Bureaucrat("Jimmy", 1);
-    Bureaucrat gary = Bureaucrat("Big Gary", 150);
+    Bureaucrat norminet = Bureaucrat("Norminet", 1);
+    Bureaucrat alex = Bureaucrat("Alex", 150);
 
     try
     {
-        jim.incrementGrade();
+        norminet.incrementGrade();
         std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n";
     }
     catch(std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << jim;
-    std::cout << gary;
+    std::cout << norminet;
+    std::cout << alex;
     try
     {
-        gary.decrementGrade();
+        alex.decrementGrade();
         std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n";
     }
     catch(std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    std::cout << gary;
+    std::cout << alex;
     
     try
     {
