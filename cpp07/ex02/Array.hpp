@@ -9,18 +9,9 @@ class Array
 {
 private:
     unsigned int length;
-
     T *arr;
 
 public:
-    class IndexOutOfBoundsException : public std::exception
-    {
-    public:
-        virtual const char *what() const throw()
-        {
-            return "Index is out of bounds.";
-        }
-    };
     Array();
     Array(unsigned int n);
     Array(Array<T> const &src);
@@ -33,7 +24,6 @@ public:
 
     unsigned int size() const;
 };
-
 
 template <typename T>
 std::ostream &operator<<(std::ostream &out, const Array<T> &arr)
@@ -53,13 +43,12 @@ template <typename T>
 Array<T>::Array()
 {
     length = 0;
-    arr = NULL;
+    arr = new T[0];
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-    std::cout<<"called\n";
     length = n;
     arr = new T[n];
 }
@@ -67,19 +56,21 @@ Array<T>::Array(unsigned int n)
 template <typename T>
 Array<T>::Array(Array<T> const &src)
 {
+    arr = NULL;
     *this = src;
 }
 
 template <typename T>
 Array<T>::~Array()
 {
-    delete [] arr;
+    delete[] arr;
 }
 
 template <typename T>
 Array<T> &Array<T>::operator=(Array<T> const &src)
 {
-    delete [] arr;
+    if (arr)
+        delete[] arr;
     length = src.length;
     arr = new T[length];
     for (unsigned int i = 0; i < length; i++)
@@ -100,12 +91,11 @@ T &Array<T>::operator[](unsigned int i) const
 {
     if (i < 0 || i >= length)
     {
-        throw IndexOutOfBoundsException();
+        throw std::out_of_range("Index out of range");
     }
     else
         return arr[i];
 }
-
 
 template <typename T>
 unsigned int Array<T>::size() const

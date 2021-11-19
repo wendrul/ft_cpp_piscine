@@ -1,33 +1,53 @@
 #include <iostream>
 #include "Array.hpp"
 
-
-template <typename T>
-std::ostream &operator<<(std::ostream &out, const Array<T> &arr);
-
-int main()
+#define MAX_VAL 750
+int main(int, char**)
 {
-    Array<int> arr2 = Array<int>(10);
-    
-    
-    Array<Array<int> > arr = Array<Array<int> >(10);
-    
-    arr.print();
-    arr[0] = 4;
-    arr.print();
-    // arr2 = arr;
-    std::cout << "\n\n";
-    arr[0] = 1;
-    arr.print();
-    arr2.print();
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
     try
     {
-        arr2[11] = -1;
+        numbers[-2] = 0;
     }
-    catch (const std::exception &e)
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
 
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;
     return 0;
 }
