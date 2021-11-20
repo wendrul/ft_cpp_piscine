@@ -23,7 +23,6 @@ int main()
     std::cout << "max of ints: " << ::max<int>(a_i, b_i) << std::endl;
     std::cout << "max of floats (implictly casted to ints): " << ::max<int>(a_f, b_f) << "\n\n\n";
 
-
     std::cout << "Subject test main\n\n";
     int a = 2;
     int b = 3;
